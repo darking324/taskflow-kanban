@@ -21,7 +21,9 @@ layout of a Kanban board, built with semantic HTML and CSS.
 
 ## Run it
 
-Open `index.html` in a browser, or serve the folder:
+Live: https://skillme-taskflow.vercel.app
+
+Or open `index.html` in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server 8000
