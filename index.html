@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow — Collaborative Sprint &amp; Kanban Workspace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <h1 class="app-title">TaskFlow</h1>
+      <p class="app-subtitle">Collaborative Sprint &amp; Kanban Workspace</p>
+    </div>
+
+    <form class="add-task-form" action="#" method="post">
+      <label class="visually-hidden" for="task-input">Task title</label>
+      <input class="task-input" id="task-input" type="text" name="title"
+             placeholder="Add a task..." required>
+      <label class="visually-hidden" for="priority-select">Priority</label>
+      <select class="priority-select" id="priority-select" name="priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button class="add-task-button" type="submit">Add task</button>
+    </form>
+  </header>
+
+  <main class="board">
+    <section class="column" aria-labelledby="col-todo-heading">
+      <header class="column-header">
+        <h2 class="column-title" id="col-todo-heading">To Do</h2>
+        <span class="task-count">2</span>
+      </header>
+
+      <article class="task-card">
+        <h3 class="task-title">Design the landing page hero section</h3>
+        <div class="task-meta">
+          <span class="priority priority-high">High</span>
+          <time class="due-date" datetime="2026-11-24">Due 24 Nov 2026</time>
+        </div>
+      </article>
+
+      <article class="task-card">
+        <h3 class="task-title">Write the onboarding email draft</h3>
+        <div class="task-meta">
+          <span class="priority priority-low">Low</span>
+          <time class="due-date" datetime="2026-11-28">Due 28 Nov 2026</time>
+        </div>
+      </article>
+    </section>
+
+    <section class="column" aria-labelledby="col-progress-heading">
+      <header class="column-header">
+        <h2 class="column-title" id="col-progress-heading">In Progress</h2>
+        <span class="task-count">2</span>
+      </header>
+
+      <article class="task-card">
+        <h3 class="task-title">Build the Kanban board layout</h3>
+        <div class="task-meta">
+          <span class="priority priority-high">High</span>
+          <time class="due-date" datetime="2026-11-21">Due 21 Nov 2026</time>
+        </div>
+      </article>
+
+      <article class="task-card">
+        <h3 class="task-title">Set up the project Git repository</h3>
+        <div class="task-meta">
+          <span class="priority priority-medium">Medium</span>
+          <time class="due-date" datetime="2026-11-22">Due 22 Nov 2026</time>
+        </div>
+      </article>
+    </section>
+
+    <section class="column" aria-labelledby="col-done-heading">
+      <header class="column-header">
+        <h2 class="column-title" id="col-done-heading">Done</h2>
+        <span class="task-count">2</span>
+      </header>
+
+      <article class="task-card">
+        <h3 class="task-title">Choose the project name and scope</h3>
+        <div class="task-meta">
+          <span class="priority priority-medium">Medium</span>
+          <time class="due-date" datetime="2026-11-18">Due 18 Nov 2026</time>
+        </div>
+      </article>
+
+      <article class="task-card">
+        <h3 class="task-title">Create the repo and first commit</h3>
+        <div class="task-meta">
+          <span class="priority priority-low">Low</span>
+          <time class="due-date" datetime="2026-11-19">Due 19 Nov 2026</time>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>TaskFlow — Week 1: static Kanban layout (HTML &amp; CSS). Interactivity arrives in Week 2.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

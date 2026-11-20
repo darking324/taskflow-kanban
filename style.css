@@ -1,0 +1,230 @@
+/* TaskFlow — Week 1: Kanban board layout (HTML & CSS) */
+
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-soft: #273449;
+  --card: #f8fafc;
+  --ink: #0f172a;
+  --muted: #94a3b8;
+  --line: #334155;
+  --accent: #38bdf8;
+
+  /* Priority colours */
+  --priority-high-bg: #fee2e2;
+  --priority-high-text: #b91c1c;
+  --priority-medium-bg: #fef3c7;
+  --priority-medium-text: #92400e;
+  --priority-low-bg: #dcfce7;
+  --priority-low-text: #166534;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--card);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Header + Add-task form ---------- */
+
+.app-header {
+  padding: 1.5rem 2rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+}
+
+.app-title {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.app-subtitle {
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.add-task-form {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.task-input,
+.priority-select {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--card);
+  font: inherit;
+}
+
+.task-input {
+  flex: 1 1 280px;
+}
+
+.priority-select {
+  flex: 0 0 auto;
+}
+
+.add-task-button {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- Board: three columns side by side ---------- */
+
+.board {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.column {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.column-title {
+  font-size: 1.05rem;
+}
+
+.task-count {
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--card);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Task cards (one shared class) ---------- */
+
+.task-card {
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 0.6rem;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.task-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.priority {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.priority-high {
+  background: var(--priority-high-bg);
+  color: var(--priority-high-text);
+}
+
+.priority-medium {
+  background: var(--priority-medium-bg);
+  color: var(--priority-medium-text);
+}
+
+.priority-low {
+  background: var(--priority-low-bg);
+  color: var(--priority-low-text);
+}
+
+.due-date {
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+/* ---------- Footer ---------- */
+
+.app-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ---------- Stretch goal: stack columns on narrow screens ---------- */
+
+@media (max-width: 700px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    min-height: 0;
+  }
+}
