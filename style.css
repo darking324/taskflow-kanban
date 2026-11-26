@@ -234,3 +234,35 @@ body {
     min-height: 0;
   }
 }
+
+/* ---------- Week 2: card buttons ---------- */
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.card-button {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.55rem;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.card-button:hover {
+  background: #e2e8f0;
+}
+
+.delete-button {
+  color: var(--priority-high-text);
+}
+
+/* No "Move" in the last column */
+.column[data-status="done"] .move-button {
+  display: none;
+}

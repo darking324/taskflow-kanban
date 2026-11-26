@@ -28,7 +28,7 @@
   </header>
 
   <main class="board">
-    <section class="column" aria-labelledby="col-todo-heading">
+    <section class="column" data-status="todo" aria-labelledby="col-todo-heading">
       <header class="column-header">
         <h2 class="column-title" id="col-todo-heading">To Do</h2>
         <span class="task-count">2</span>
@@ -53,7 +53,7 @@
       </article>
     </section>
 
-    <section class="column" aria-labelledby="col-progress-heading">
+    <section class="column" data-status="progress" aria-labelledby="col-progress-heading">
       <header class="column-header">
         <h2 class="column-title" id="col-progress-heading">In Progress</h2>
         <span class="task-count">2</span>
@@ -78,7 +78,7 @@
       </article>
     </section>
 
-    <section class="column" aria-labelledby="col-done-heading">
+    <section class="column" data-status="done" aria-labelledby="col-done-heading">
       <header class="column-header">
         <h2 class="column-title" id="col-done-heading">Done</h2>
         <span class="task-count">2</span>
@@ -105,7 +105,7 @@
   </main>
 
   <footer class="app-footer">
-    <p>TaskFlow — Week 1: static Kanban layout (HTML &amp; CSS). Interactivity arrives in Week 2.</p>
+    <p>TaskFlow — Week 2: add, move, edit and delete tasks with JavaScript.</p>
   </footer>
 
   <script src="script.js"></script>
