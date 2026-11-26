@@ -1,0 +1,8 @@
+[
+  { "id": "starter-1", "title": "Design the landing page hero section", "description": "Sketch the hero layout with headline, sub-text and a call-to-action button.", "priority": "high", "status": "todo" },
+  { "id": "starter-2", "title": "Write the onboarding email draft", "description": "Short welcome email that explains the first three steps for new users.", "priority": "low", "status": "todo" },
+  { "id": "starter-3", "title": "Build the Kanban board layout", "description": "Three-column board with CSS Grid, task counts and shared card styles.", "priority": "high", "status": "progress" },
+  { "id": "starter-4", "title": "Set up the project Git repository", "description": "Initialise Git, add a README and push the first version to GitHub.", "priority": "medium", "status": "progress" },
+  { "id": "starter-5", "title": "Choose the project name and scope", "description": "Settle on TaskFlow and list the features for the four weeks.", "priority": "medium", "status": "done" },
+  { "id": "starter-6", "title": "Create the repo and first commit", "description": "Public GitHub repo with index.html, style.css and script.js.", "priority": "low", "status": "done" }
+]

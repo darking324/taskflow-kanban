@@ -266,3 +266,46 @@ body {
 .column[data-status="done"] .move-button {
   display: none;
 }
+
+/* ---------- Week 3: toolbar (search + import) ---------- */
+
+.toolbar {
+  max-width: 1200px;
+  margin: 0.75rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-input {
+  flex: 1 1 240px;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--card);
+  font: inherit;
+}
+
+.import-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.status-message {
+  flex-basis: 100%;
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.status-message.is-error {
+  color: #fca5a5;
+}

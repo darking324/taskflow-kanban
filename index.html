@@ -25,87 +25,44 @@
       </select>
       <button class="add-task-button" type="submit">Add task</button>
     </form>
+
+    <div class="toolbar">
+      <label class="visually-hidden" for="search-input">Search tasks</label>
+      <input class="search-input" id="search-input" type="search"
+             placeholder="Search tasks by title...">
+      <button class="import-button" id="import-button" type="button">Import starter tasks</button>
+      <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+    </div>
   </header>
 
   <main class="board">
     <section class="column" data-status="todo" aria-labelledby="col-todo-heading">
       <header class="column-header">
         <h2 class="column-title" id="col-todo-heading">To Do</h2>
-        <span class="task-count">2</span>
+        <span class="task-count">0</span>
       </header>
 
-      <article class="task-card">
-        <h3 class="task-title">Design the landing page hero section</h3>
-        <p class="task-desc">Sketch the hero layout with headline, sub-text and a call-to-action button.</p>
-        <div class="task-meta">
-          <span class="priority priority-high">High</span>
-          <time class="due-date" datetime="2026-11-24">Due 24 Nov 2026</time>
-        </div>
-      </article>
-
-      <article class="task-card">
-        <h3 class="task-title">Write the onboarding email draft</h3>
-        <p class="task-desc">Short welcome email that explains the first three steps for new users.</p>
-        <div class="task-meta">
-          <span class="priority priority-low">Low</span>
-          <time class="due-date" datetime="2026-11-28">Due 28 Nov 2026</time>
-        </div>
-      </article>
     </section>
 
     <section class="column" data-status="progress" aria-labelledby="col-progress-heading">
       <header class="column-header">
         <h2 class="column-title" id="col-progress-heading">In Progress</h2>
-        <span class="task-count">2</span>
+        <span class="task-count">0</span>
       </header>
 
-      <article class="task-card">
-        <h3 class="task-title">Build the Kanban board layout</h3>
-        <p class="task-desc">Three-column board with CSS Grid, task counts and shared card styles.</p>
-        <div class="task-meta">
-          <span class="priority priority-high">High</span>
-          <time class="due-date" datetime="2026-11-21">Due 21 Nov 2026</time>
-        </div>
-      </article>
-
-      <article class="task-card">
-        <h3 class="task-title">Set up the project Git repository</h3>
-        <p class="task-desc">Initialise Git, add a README and push the first version to GitHub.</p>
-        <div class="task-meta">
-          <span class="priority priority-medium">Medium</span>
-          <time class="due-date" datetime="2026-11-22">Due 22 Nov 2026</time>
-        </div>
-      </article>
     </section>
 
     <section class="column" data-status="done" aria-labelledby="col-done-heading">
       <header class="column-header">
         <h2 class="column-title" id="col-done-heading">Done</h2>
-        <span class="task-count">2</span>
+        <span class="task-count">0</span>
       </header>
 
-      <article class="task-card">
-        <h3 class="task-title">Choose the project name and scope</h3>
-        <p class="task-desc">Settle on TaskFlow and list the features for the four weeks.</p>
-        <div class="task-meta">
-          <span class="priority priority-medium">Medium</span>
-          <time class="due-date" datetime="2026-11-18">Due 18 Nov 2026</time>
-        </div>
-      </article>
-
-      <article class="task-card">
-        <h3 class="task-title">Create the repo and first commit</h3>
-        <p class="task-desc">Public GitHub repo with index.html, style.css and script.js.</p>
-        <div class="task-meta">
-          <span class="priority priority-low">Low</span>
-          <time class="due-date" datetime="2026-11-19">Due 19 Nov 2026</time>
-        </div>
-      </article>
     </section>
   </main>
 
   <footer class="app-footer">
-    <p>TaskFlow — Week 2: add, move, edit and delete tasks with JavaScript.</p>
+    <p>TaskFlow — Week 3: tasks saved in localStorage, starter data imported from tasks.json.</p>
   </footer>
 
   <script src="script.js"></script>
