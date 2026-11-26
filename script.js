@@ -1,4 +1,5 @@
-// TaskFlow — Week 3: Saving Tasks & Importing Starter Data
+// TaskFlow — Weeks 2–4: add/move/delete, save/load + import, stats.
+// Drag-and-drop lives separately in drag.js.
 // The `tasks` array is the single source of truth; the board is always
 // re-rendered from it, and every change is saved to localStorage.
 
@@ -115,6 +116,7 @@ function createCard(task) {
   const card = document.createElement("article");
   card.className = "task-card";
   card.dataset.id = task.id;
+  card.setAttribute("draggable", "true");
 
   const heading = document.createElement("h3");
   heading.className = "task-title";
@@ -154,6 +156,21 @@ function updateCounts() {
     column.querySelector(".task-count").textContent =
       column.querySelectorAll(".task-card").length;
   });
+  updateStats();
+}
+
+// Stats bar: counts per status and completion % (from all tasks, not the search filter).
+function updateStats() {
+  const total = tasks.length;
+  const by = (status) => tasks.filter((t) => t.status === status).length;
+  const done = by("done");
+  const percent = total ? Math.round((done / total) * 100) : 0;
+  document.querySelector("#stat-total").textContent = total;
+  document.querySelector("#stat-todo").textContent = by("todo");
+  document.querySelector("#stat-progress").textContent = by("progress");
+  document.querySelector("#stat-done").textContent = done;
+  document.querySelector("#stat-percent").textContent = `${percent}%`;
+  document.querySelector("#progress-fill").style.width = `${percent}%`;
 }
 
 function render() {
